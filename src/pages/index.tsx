@@ -24,7 +24,7 @@ export default function Home() {
         </x.h1>
         <x.h2 fontSize="xl">Keep your screen caffeinated.</x.h2>
         {/*<Lottie*/}
-        <Button onClick={() => setIsActive((x) => !x)} p={5}>
+        <Button onClick={() => setIsActive((x) => !x)}>
           {isActive ? "On" : "Off"}
         </Button>
       </x.main>
