@@ -1,10 +1,12 @@
-import Head from 'next/head'
-import Image from 'next/image'
-import { Inter } from '@next/font/google'
-import styles from '@/styles/Home.module.css'
-import {useState} from "react";
+import Head from "next/head";
+import Image from "next/image";
+import { Inter } from "@next/font/google";
+import styles from "@/styles/Home.module.css";
+import { useState } from "react";
+import { x } from "@xstyled/styled-components";
+import { Button } from "@/atoms/Button";
 
-const inter = Inter({ subsets: ['latin'] })
+const inter = Inter({ subsets: ["latin"] });
 
 export default function Home() {
   const [isActive, setIsActive] = useState(false);
@@ -16,10 +18,16 @@ export default function Home() {
         <meta name="viewport" content="width=device-width, initial-scale=1" />
         <link rel="icon" href="/favicon.ico" />
       </Head>
-      <main className={styles.main}>
-        <h1>Time for a coffee break. Keep your screen caffeinated.</h1>
-
-      </main>
+      <x.main maxWidth="1000px" mx="auto" mt={{ md: 8 }}>
+        <x.h1 fontSize="3xl" font>
+          Coffee break
+        </x.h1>
+        <x.h2 fontSize="xl">Keep your screen caffeinated.</x.h2>
+        {/*<Lottie*/}
+        <Button onClick={() => setIsActive((x) => !x)} p={5}>
+          {isActive ? "On" : "Off"}
+        </Button>
+      </x.main>
     </>
-  )
+  );
 }
